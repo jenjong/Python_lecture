@@ -147,6 +147,13 @@ len(b)
 list( map(lambda x,y: x + y , ['hi','there'], ['3','4']))
 
 
+# tuple
+a = (1,2,3)
+a
+a[1] = 3
+a = 1,2,3
+a
+
 
 # make dictionary
 data = {'state': ['A','A', 'B','B','B'],
@@ -176,3 +183,6 @@ pd.date_range('20130101', '20130331')
 dates = pd.date_range('20130101', periods = 6)
 df = DataFrame(np.random.randn(6,4), index = dates, columns = list('ABCD'))
 list('ABDF')
+
+
+
