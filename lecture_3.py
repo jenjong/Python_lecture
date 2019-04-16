@@ -11,6 +11,7 @@ import sklearn
 from sklearn import datasets, linear_model
 x = np.random.rand(4,3)
 x = np.column_stack( (np.repeat(1,4), x))
+#x = np.row_stack( (np.repeat(1,4), x) ) : 
 #x = [5.05, 6.75, 3.21, 2.66]
 y = np.array([1.65, 26.5, -5.93, 7.96])
 y.sum()

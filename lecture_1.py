@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Jun 12 21:48:21 2018
-
 @author: Jeon
 """
 import os
@@ -12,17 +11,19 @@ import numpy as np
 os.getcwd()
 # set my working directory
 current_dir = 'C:/Users/Jeon/Documents/GitHub/Python_lecture'
+home = os.path.expanduser("~")
+current_dir = home + '\\Documents\\GitHub\\Python_lecture'
 os.chdir(current_dir)
+os.getcwd()
 # read a csv file:  'header = None'
 rdata = pd.read_csv("iris.data", header=None)
 # select columns
 rdata[[1]]
 rdata[[0,2,4]]
 type(rdata[[1]])
-rdata[[1]]
-
 # read a csv file: 
 cdata = pd.read_csv('CO2.csv', header ='infer')
+# 다음을 확인하시오: cdata[[0]]
 cdata.columns
 cdata_colnames = list(cdata.columns)
 c1 = cdata[cdata_colnames[0]]
