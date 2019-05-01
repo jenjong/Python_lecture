@@ -5,12 +5,51 @@ Created on Wed Jun 13 15:13:04 2018
 @author: Jeon
 """
 # MATHMATICAL FUNCTIONS
+# numpy array
 import numpy as np
-a = np.array([1,2,3,7,9])
+# create 1D-array
+## from list
+a = np.array([3,1,2,4,])
+print(a)
+## from tuple
+a = np.array((3,1,2,4,))
+type(a)
+## check the result: from dict, from set
+a = np.array({'v1':3, 'v2':1, 'v3':2,'v4':4,})
+a = np.array(set({1,2,4,}))
+
+# data type
+a = np.array([3,1,2,4,])
+a.dtype
+a = np.array([3.,1.,2.,4.,])
+a.dtype
+a = np.array([3,1,2,4,], dtype = 'float32')
+a.dtype
+a = np.array([3,1,2,4,], dtype = float)
+a.dtype
+# change the data type
+a = a.astype('float32')
+a.dtype
 
 
-2**(2)
-pow(2,2.3)
+a_r = np.array([3,1,2,4,])
+a_l = [3.,1.,2.,4.]
+# power
+2**(4)
+2**(0.5)
+pow(2,0.5)
+
+# check the result
+a_l**(4)
+pow(a_l, 4)
+
+a_r**(4)
+pow(a_r, 4)
+
+# dtype
+
+
+
 # quotient
 5//2
 # remains
@@ -19,8 +58,10 @@ pow(2,2.3)
 
 # matrix
 a = list([3,1,2,4,6,5])
-a = np.array(a)
+a = np.array(a, dtype = 'f')
 type(a)
+a.dtype
+
 a.sum()
 a.argmin()
 a.argmax()

@@ -184,5 +184,8 @@ dates = pd.date_range('20130101', periods = 6)
 df = DataFrame(np.random.randn(6,4), index = dates, columns = list('ABCD'))
 list('ABDF')
 
-
-
+a = [1,3,5,4,2]
+a.sort(reverse = True)
+a
+a = ['Life', 'is', 'too', 'short'] 
+' '.join(a)
