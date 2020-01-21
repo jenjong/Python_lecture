@@ -5,6 +5,8 @@ Created on Tue Jun 12 21:48:21 2018
 """
 import os
 from pandas import Series, DataFrame
+# Series and DataFrame are classes defined in pandas
+# we can use Series instead of pandas.Series
 import pandas as pd
 import numpy as np
 # check the working directory
@@ -23,8 +25,9 @@ rdata[[0,2,4]]
 type(rdata[[1]])
 # read a csv file: 
 cdata = pd.read_csv('CO2.csv', header ='infer')
-# 다음을 확인하시오: cdata[[0]]
+# 다음을 확인하시오: cdata[[0]], cdata[[1]],...
 cdata.columns
+rdata.columns
 cdata_colnames = list(cdata.columns)
 c1 = cdata[cdata_colnames[0]]
 c2 = cdata[[cdata_colnames[0]]]
@@ -41,9 +44,11 @@ rdata.columns = ['sepal_length', 'Sepal_width', 'petal_length',
 rdata['sepal_length']
 # change the second column names as 'sepal_width'
 rdata.columns[1] = 'sepal_width' # does not work
+# see the following code. Not easy!
 rdata.rename(columns = {'Sepal_width':'sepal_width'}, inplace = True)
-
-
+# 
+rdata.rename(columns = {'Sepal_width':'sepal_width',
+                        'petal_length':'Petal_length'}, inplace = True)
 
 # show head of dataframe
 rdata.head(n=2)
@@ -52,7 +57,7 @@ rdata.head(n=2)
 rdata.iloc[:5]
 
 # delete the selected row
-# the fifth
+# the fifth row and the first col
 rdata.drop(5,0)
 #
 # 4~5

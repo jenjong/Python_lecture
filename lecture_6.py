@@ -37,6 +37,9 @@ cal2 = Cal()
 cal1.add(3)
 cal1.add(4)
 cal1
+
+# id returns the address of class
+id(cal1)
 id(cal2)
 
 
