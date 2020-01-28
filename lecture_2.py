@@ -129,3 +129,23 @@ a[a<.5]
 np.isnan(np.nan)
 
 
+# function
+# lambda function
+
+list(map(lambda x: x ** 2, range(5)))
+
+from functools import reduce
+# x takes the return at previous step and y takes a current input!
+reduce(lambda x, y: x + y, [0, 1, 2, 3, 4])
+reduce(lambda x, y: x + y, (0, 1, 2, 3, 4)) 
+data = 'abcde'
+reduce(lambda x, y: x + y, data) 
+reduce(lambda x, y: y + x, data) 
+# x = null, y ="a"  -> y+x = 'a'
+# x = 'a', y ='b'  -> y+x = 'ba'
+# x = 'ba', y ='c'  -> y+x = 'cba' ... 
+# 
+
+
+
+reduce(lambda x, y: x + y, [0])

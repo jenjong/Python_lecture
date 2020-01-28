@@ -118,11 +118,3 @@ a.dist2(3,4) # error!  Because of absence of method dist2.
 
 
         
-mcal1 = MoreCal ()
-mcal1.add(3)
-mcal1.add2(3)
-
-mcal2 = MoreCal ()
-mcal2.add(3)
-mcal2.add(3)
-

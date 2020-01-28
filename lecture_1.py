@@ -155,7 +155,8 @@ list( map(lambda x,y: x + y , ['hi','there'], ['3','4']))
 # tuple
 a = (1,2,3)
 a
-a[1] = 3
+a[1] = 3 # error 
+a[:1]
 a = 1,2,3
 a
 
