@@ -20,6 +20,7 @@ LABEL_COLUMN = 'survived'
 LABELS = [0, 1]
 
 # 찾아보기: tf.data.experimental.make_csv_dataset()
+# shuffle 옵셥을 잘 알아두기 (**kwargs 는 기타 입력변수를 받기 위해서 설정)
 def get_dataset(file_path, **kwargs):
     dataset = tf.data.experimental.make_csv_dataset(
     file_path,
@@ -36,11 +37,15 @@ def get_dataset(file_path, **kwargs):
 raw_train_data = get_dataset(train_file_path)
 
 def show_batch(dataset):
-  for batch, label in dataset.take(1):
-    for key, value in batch.items():
+  for predictor, label in dataset.take(1):
+    for key, value in predictor.items():
       print("{:20s}: {}".format(key,value.numpy()))
 
+
 show_batch(raw_train_data)
+# iterator 를 통해 안쪽 구조를 알아보기
+
+
 
 SELECT_COLUMNS = ['survived', 'age', 'n_siblings_spouses', 'class', 'deck', 'alone']
 temp_dataset = get_dataset(train_file_path, select_columns=SELECT_COLUMNS)
@@ -53,7 +58,8 @@ temp_dataset = get_dataset(train_file_path,
                            select_columns=SELECT_COLUMNS,
                            column_defaults = DEFAULTS)
 # iter: iterator 값을 보자. 
-example_batch, labels_batch = next(iter(temp_dataset)) 
+it = iter(temp_dataset)
+example_batch, labels_batch = next() 
 # 
 example_batch
 type(example_batch)
@@ -62,3 +68,6 @@ example_batch['age'].numpy()
 labels_batch.numpy()
 
 show_batch(temp_dataset)
+
+
+
